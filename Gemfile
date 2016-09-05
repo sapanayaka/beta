@@ -11,7 +11,7 @@ gem 'turbolinks', '5.0.1'
 gem 'jbuilder', '2.4.1'
 
 # gem 'redis', '3.0'
-# gem 'bcrypt', '3.1.7'
+gem 'bcrypt', '3.1.11'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
