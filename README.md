@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+C1: from z to dep on linode
+C3: high voltage for static pages
+C4: Ruby pdf always opened
+C5: convert pure to scss
