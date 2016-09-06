@@ -16,8 +16,6 @@ gem 'bcrypt', '3.1.11'
 
 group :development, :test do
   gem 'byebug', '9.0.0', platform: :mri
-
-  gem 'awesome_print'
   gem 'rb-readline'
 end
 
@@ -26,6 +24,8 @@ group :development do
   gem 'listen', '3.0.8'
   gem 'spring', '1.7.2'
   gem 'spring-watcher-listen', '2.0.0'
+
+  # gem 'awesome_print'
 end
 
 # group :test do

@@ -11,8 +11,8 @@ environment rails_env
 
 bind "unix:///tmp/current.sock"
 
+# Comment out both if using byebug
 daemonize
-
 stdout_redirect "#{log_dir}/puma.stdout.log", "#{log_dir}/puma.stderr.log", true
 
 pidfile "#{tmp_dir}/pids/puma.pid"
