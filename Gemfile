@@ -13,6 +13,7 @@ gem 'jbuilder', '2.4.1'
 # gem 'redis', '3.0'
 gem 'bcrypt', '3.1.11'
 # gem 'capistrano-rails', group: :development
+gem 'faker', '1.6.1'
 
 group :development, :test do
   gem 'byebug', '9.0.0', platform: :mri
