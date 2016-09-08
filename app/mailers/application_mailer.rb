@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'user@valid.fr'
+  default from: 'noreply@macbook.local'
   layout 'mailer'
 end

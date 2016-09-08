@@ -9,7 +9,6 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get edit_user_path(@user)
     # assert_template 'users/edit'
-    # assert_select 'h1', 'Update your profile'
     patch user_path(@user), params: { user: { name:  "",
                                               email: "foo@invalid",
                                               password:              "foo",
@@ -24,7 +23,6 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_redirected_to edit_user_path(@user)
     get edit_user_path(@user)
     # assert_template 'users/edit'
-    # assert_select 'h1', 'Update your profile'
     name  = "Foo Bar"
     email = "foo@bar.com"
     patch user_path(@user), params: { user: { name:  name,
