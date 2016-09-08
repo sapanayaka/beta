@@ -4,7 +4,6 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
   test "layout links" do
     get root_path
 
-    # rails-controller-testing required
     # assert_template 'static_pages/home'
 
     assert_select "a[href=?]", root_path, count: 2
