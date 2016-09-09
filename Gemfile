@@ -1,11 +1,19 @@
 source 'https://rubygems.org'
-gem 'rails', '5.0.0'
-# gem 'bootstrap-sass', '3.3.6'
+gem 'rails', '5.0.0.1'
+
+  gem 'faker',                   '1.6.3'
+  gem 'carrierwave',             '0.11.2'
+  gem 'mini_magick',             '4.5.1'
+  # gem 'fog',                     '1.38.0'
+  gem 'bootstrap-sass', '3.3.6'
+  # gem 'will_paginate',           '3.0.7'
+  # gem 'bootstrap-will_paginate', '0.0.10'
+
 gem 'pg', '0.18.4'
 gem 'puma', '3.4.0'
 gem 'sass-rails', '5.0.6'
 gem 'uglifier', '3.0.0'
-gem 'coffee-rails' #, '4.2.1'
+gem 'coffee-rails', '4.2.1'
 gem 'jquery-rails', '4.1.1'
 gem 'turbolinks', '5.0.1'
 gem 'jbuilder', '2.4.1'
@@ -13,7 +21,6 @@ gem 'jbuilder', '2.4.1'
 # gem 'redis', '3.0'
 gem 'bcrypt', '3.1.11'
 # gem 'capistrano-rails', group: :development
-gem 'faker', '1.6.1'
 
 group :development, :test do
   gem 'byebug', '9.0.0', platform: :mri
@@ -29,11 +36,11 @@ group :development do
   # gem 'awesome_print'
 end
 
-# group :test do
-#   gem 'rails-controller-testing', '0.1.1'
-# #   gem 'minitest-reporters',       '1.1.9'
-# #   gem 'guard',                    '2.13.0'
-# #   gem 'guard-minitest',           '2.4.4'
-# end
+  group :test do
+    gem 'rails-controller-testing', '0.1.1'
+    gem 'minitest-reporters',       '1.1.9'
+    gem 'guard',                    '2.13.0'
+    gem 'guard-minitest',           '2.4.4'
+  end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
