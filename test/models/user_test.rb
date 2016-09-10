@@ -10,7 +10,6 @@ class UserTest < ActiveSupport::TestCase
   test "should be valid" do
     assert @user.valid?
   end
-
   test "name should be present" do
     @user.name = "      \t"
     assert_not @user.valid?
@@ -59,11 +58,9 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
-
   test "authenticated? should return false for a user with nil digest" do
     assert_not @user.authenticated?(:remember, '')
   end
-
   test "associated microposts should be destroyed" do
     @user.save
     @user.microposts.create!(content: "Lorem ipsum")
@@ -71,5 +68,32 @@ class UserTest < ActiveSupport::TestCase
       @user.destroy
     end
   end
+  test "should follow and unfollow a user" do
+    ego = users(:ego)
+    archer  = users(:archer)
+    assert_not ego.following?(archer)
+    ego.follow(archer)
+    assert ego.following?(archer)
+    assert archer.followers.include?(ego)
+    ego.unfollow(archer)
+    assert_not ego.following?(archer)
+  end
 
+  test "feed should have the right posts" do
+    ego = users(:ego)
+    archer  = users(:archer)
+    lana    = users(:lana)
+    # Posts from followed user
+    lana.microposts.each do |post_following|
+      assert ego.feed.include?(post_following)
+    end
+    # Posts from self
+    ego.microposts.each do |post_self|
+      assert ego.feed.include?(post_self)
+    end
+    # Posts from unfollowed user
+    archer.microposts.each do |post_unfollowed|
+      assert_not ego.feed.include?(post_unfollowed)
+    end
+  end
 end

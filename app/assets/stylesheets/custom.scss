@@ -3,14 +3,6 @@
 
 /* mixins, variables, etc. */
 
-/*
-$gray-darker: ;
-$gray-light: ;
-$gray-lighter: ;
-$gray-medium-light: #eaeaea;
-$state-danger-text: ;
-*/
-
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -52,7 +44,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  /*color: $gray-light;*/
+  color: $gray-light;
 }
 p {
   font-size: 1.1em;
@@ -78,12 +70,12 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  /*border-top: 1px solid $gray-medium-light;*/
-  /*color: $gray-light;*/
+  border-top: 1px solid #eaeaea;
+  color: $gray-light;
   a {
-    /*color: $gray;*/
+    color: $gray;
     &:hover {
-      /*color: $gray-darker;*/
+      color: $gray-darker;
     }
   }
   small {
@@ -146,6 +138,44 @@ aside {
   margin-top: 15px;
 }
 
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
+
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -166,14 +196,14 @@ input {
     margin: 0 0 30px 0;
   }
 }
-/*
+
 .field_with_errors {
   @extend .has-error;
     .form-control {
       color: $state-danger-text;
     }
 }
-*/
+
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
@@ -196,7 +226,7 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid silver; /*$gray-lighter*/
+    border-bottom: 1px solid $gray-lighter;
   }
 }
 
@@ -222,7 +252,7 @@ input {
     }
   }
   .timestamp {
-    /*color: $gray-light;*/
+    color: $gray-light;
     display: block;
     margin-left: 60px;
   }

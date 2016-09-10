@@ -2,10 +2,13 @@
   <div class="row">
     <aside class="col-md-4">
       <section class="user_info">
-				<%= render :partial => 'shared/user_info' %>
+        <%= render :partial => 'shared/user_info' %>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
       </section>
       <section class="micropost_form">
-				<%= render :partial => 'shared/micropost_form' %>
+        <%= render :partial => 'shared/micropost_form' %>
       </section>
     </aside>
     <div class="col-md-8">
@@ -14,66 +17,66 @@
     </div>
   </div>
 <% else %>
-	<div class="center jumbotron">
-		<h1>
-			Appel à partenariat pour une <em>vraie</em> charte de certification en orthographe
-		</h1>
-		<p>
-			Conscients de l'intérêt que peut représenter pour chacun <!-- les usagers de l'Université et des établissements d'enseignement, et spécialement pour les publics de formation continue, -->la certification de sa maîtrise de la langue française, à commencer par celle de l'orthographe,
-		</p>
-		<p>
-			Désireux de mettre en place cette certification dans des conditions satisfaisantes pour les usagers, notamment s'agissant de son coût,
-		</p>
-		<p>
-			EXELF propose <strong>la présente Charte</strong> afin de préciser les modalités de sa certification :
-		</p>
-	  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-	</div>
-	<%= link_to image_tag("5001917_sized.png", alt: "Rails logo"),
-	             "http://rubyonrails.org" %>
-	<ol>
-		<li>Une maîtrise suffisante de l'orthographe est nécessaire aux besoins de la vie quotidienne et des différents métiers, spécialement les métiers d'encadrement.
-		</li>
-		<li>La certification atteste de cette maîtrise suffisante dans les conditions détaillées ci-dessous.
-		</li>
-		<li>Conformément au point de vue exprimé par de nombreux spécialistes, une liste de 400 difficultés a été établie, ces difficultés constituant l'essentiel des difficultés de l'orthographe française.
-		</li>
-		<li>Parmi ces difficultés, 140 sont considérées comme devant impérativement être maîtrisées et donnent lieu à une question au moins lors de l'épreuve de certification.
-		</li>
-		<li>
-			<p>
-				L'épreuve de certification, d'une durée d'une heure et trente minutes, se fait en ligne, avec correction automatique.
-			</p>
-			<ul style="list-style: none">
-				Elle comprend :
-				<li>220 questions, portant sur les difficultés usuelles, dont 190 sur les difficultés visées à l'article 4 ci-dessus ;
-				</li>
-				<li>une dictée d'une dizaine de lignes (850 signes, hors espaces, avec une marge de + ou – 5%), éventuellement adaptée en orthographe alternative pour les malentendants,
-				</li>
-			</ul>
-		</li>
-		<li>La certification sera acquise si la personne candidate fournit 60% de bonnes réponses, dont 75% pour les 140 questions portant sur les difficultés les plus fondamentales visées à l'article 4, et ne commet pas plus de 3 fautes à la dictée.
-		</li>
-		<li>
-			<p>
-				Les signataires de la présente Charte proposent également <strong>une certification d'excellence</strong> de l'orthographe française.
-			</p>
-			<p>
-				L'épreuve de certification, d'une durée de deux heures et trente minutes, se fera en ligne, avec correction automatique.
-			</p>
-			<ul style="list-style: none">
-				Elle comprendra :
-				<li>350 questions, dont 190 sur les difficultés visées à l'article 4 ci-dessus ;
-				</li>
-				<li>une dictée d'une vingtaine de lignes (1600 signes, hors espaces, avec une marge de + ou – 5%), éventuellement adaptée pour les malentendants.
-				</li>
-			</ul>
-			<p>
-				La certification sera acquise si la personne candidate fournit 75% de bonnes réponses, dont 90 % pour les 140 questions portant sur les difficultés les plus fondamentales visées à l'article 4, et ne commet pas plus de 3 fautes à la dictée.
-			</p>
-		</li>
-	</ol>
-	<p>
-		Si vous désirez nous rencontrer ou intégrer l'équipe des signataires de la présente Charte en vue de certifier votre personnel ou vos apprenants, <a class="pure-button" href="">contactez-nous</a>.
-	</p>
+  <div class="center jumbotron">
+    <h1>
+      Appel à partenariat pour une <em>vraie</em> charte de certification en orthographe
+    </h1>
+    <p>
+      Conscients de l'intérêt que peut représenter pour chacun <!-- les usagers de l'Université et des établissements d'enseignement, et spécialement pour les publics de formation continue, -->la certification de sa maîtrise de la langue française, à commencer par celle de l'orthographe,
+    </p>
+    <p>
+      Désireux de mettre en place cette certification dans des conditions satisfaisantes pour les usagers, notamment s'agissant de son coût,
+    </p>
+    <p>
+      EXELF propose <strong>la présente Charte</strong> afin de préciser les modalités de sa certification :
+    </p>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+  <%= link_to image_tag("5001917_sized.png", alt: "Rails logo"),
+               "http://rubyonrails.org" %>
+  <ol>
+    <li>Une maîtrise suffisante de l'orthographe est nécessaire aux besoins de la vie quotidienne et des différents métiers, spécialement les métiers d'encadrement.
+    </li>
+    <li>La certification atteste de cette maîtrise suffisante dans les conditions détaillées ci-dessous.
+    </li>
+    <li>Conformément au point de vue exprimé par de nombreux spécialistes, une liste de 400 difficultés a été établie, ces difficultés constituant l'essentiel des difficultés de l'orthographe française.
+    </li>
+    <li>Parmi ces difficultés, 140 sont considérées comme devant impérativement être maîtrisées et donnent lieu à une question au moins lors de l'épreuve de certification.
+    </li>
+    <li>
+      <p>
+        L'épreuve de certification, d'une durée d'une heure et trente minutes, se fait en ligne, avec correction automatique.
+      </p>
+      <ul style="list-style: none">
+        Elle comprend :
+        <li>220 questions, portant sur les difficultés usuelles, dont 190 sur les difficultés visées à l'article 4 ci-dessus ;
+        </li>
+        <li>une dictée d'une dizaine de lignes (850 signes, hors espaces, avec une marge de + ou – 5%), éventuellement adaptée en orthographe alternative pour les malentendants,
+        </li>
+      </ul>
+    </li>
+    <li>La certification sera acquise si la personne candidate fournit 60% de bonnes réponses, dont 75% pour les 140 questions portant sur les difficultés les plus fondamentales visées à l'article 4, et ne commet pas plus de 3 fautes à la dictée.
+    </li>
+    <li>
+      <p>
+        Les signataires de la présente Charte proposent également <strong>une certification d'excellence</strong> de l'orthographe française.
+      </p>
+      <p>
+        L'épreuve de certification, d'une durée de deux heures et trente minutes, se fera en ligne, avec correction automatique.
+      </p>
+      <ul style="list-style: none">
+        Elle comprendra :
+        <li>350 questions, dont 190 sur les difficultés visées à l'article 4 ci-dessus ;
+        </li>
+        <li>une dictée d'une vingtaine de lignes (1600 signes, hors espaces, avec une marge de + ou – 5%), éventuellement adaptée pour les malentendants.
+        </li>
+      </ul>
+      <p>
+        La certification sera acquise si la personne candidate fournit 75% de bonnes réponses, dont 90 % pour les 140 questions portant sur les difficultés les plus fondamentales visées à l'article 4, et ne commet pas plus de 3 fautes à la dictée.
+      </p>
+    </li>
+  </ol>
+  <p>
+    Si vous désirez nous rencontrer ou intégrer l'équipe des signataires de la présente Charte en vue de certifier votre personnel ou vos apprenants, <a class="pure-button" href="">contactez-nous</a>.
+  </p>
 <% end %>

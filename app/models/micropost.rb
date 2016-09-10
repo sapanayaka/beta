@@ -3,6 +3,7 @@ class Micropost < ApplicationRecord
   belongs_to :user
 
   default_scope -> { order(created_at: :desc) }
+  # default_scope -> { order("RANDOM()").limit(38) }
 
   mount_uploader :picture, PictureUploader
 
